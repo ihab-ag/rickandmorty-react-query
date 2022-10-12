@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query';
+import Character from './character';
 export const Characters=() => {
 
     const fetchCharacters = async () =>{
@@ -14,7 +15,7 @@ export const Characters=() => {
 
   return (
     <>
-    {characters.results.map(character=> <div>{character.name}</div>)}
+    {characters.results.map(character=> <Character character={character} />)}
     </>
   )
 }
